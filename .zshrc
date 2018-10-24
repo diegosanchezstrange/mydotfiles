@@ -2,9 +2,16 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/diegosanchezstrange/.oh-my-zsh"
+export ZSH="/home/diego/.oh-my-zsh"
+
+PATH=$HOME/mydotfiles/tmux-spotify-info:$PATH
 
 ZSH_THEME="robbyrussell"
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
  COMPLETION_WAITING_DOTS="true"
@@ -32,6 +39,8 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-#ALias
+#Alias
+alias ts="tmux new -s work"
+alias ta="tmux a -t work"
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"

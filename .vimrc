@@ -7,10 +7,17 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'artur-shaik/vim-javacomplete2'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
-colorscheme molokai
+"colorscheme molokai
+"Sourcing .vimrc_background where base16 clorscheme is set by the base16
+"shell script
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+    source ~/.vimrc_background
+endif
 
 "Fzf configuration
 set rtp+=~/.fzf
@@ -28,10 +35,11 @@ set colorcolumn=+1
 highlight ColorColumn ctermbg=DarkRed
 
 "KeyMapings
-noremap <Up> <NOP>
-noremap <Down> <NOP>
 noremap <Left> <NOP>
-noremap <Right> <NOP>
+map <Up><Up> :resize +10<CR>
+map <DOWN><DOWN> :resize -10<CR>
+map <DOWN> :split<CR>
+map <Right> :vsplit<CR>
 map <c-_><c-_>   :: :TComment
 map <c-f><C-f> :Files<CR>
 map ;; :NERDTree<CR>
