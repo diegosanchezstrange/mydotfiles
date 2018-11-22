@@ -4,6 +4,7 @@ sudo add-apt-repository ppa:gnome-terminator
 sudo apt-get update
 #Install the list of packages above with apt-get
 sudo apt-get install terminator
+sudo apt-get install git-core
 sudo apt install build-essential cmake python3 python3-dev
 sudo apt install cmake3
 sudo apt-get install tmux 
@@ -21,6 +22,13 @@ test -r ~/.bash_profile && echo "export PATH='$(brew --prefix)/bin:$(brew --pref
 echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.profile
 #Install oh-my-zsh
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+chsh -s $(which zsh)
+#Install Plug manager for vim
+mkdir ~/.vim
+mkdir ~/.vim/plugged
+mkdir ~/.vim/autoload
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 #Install base 16 for shell
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 #Run Youcompleteme script
