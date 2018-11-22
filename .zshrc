@@ -39,7 +39,12 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+fortune | cowsay -f tux
+
 #Alias
+alias jsc="node"
+alias py="python3"
+alias ctux="clear ; fortune | cowsay -f tux"
 alias ts="tmux new -s work"
 alias ta="tmux a -t work"
 alias zshrc="vim ~/.zshrc"
