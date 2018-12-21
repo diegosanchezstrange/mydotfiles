@@ -1,38 +1,38 @@
 
 call plug#begin('~/.vim/plugged')
 
+"Plug 'flazz/vim-colorschemes'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'artur-shaik/vim-javacomplete2'
+"Plug 'pangloss/vim-javascript' 
 Plug 'scrooloose/nerdtree'
-Plug 'flazz/vim-colorschemes'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/tomtom/tcomment_vim'
-Plug 'artur-shaik/vim-javacomplete2'
 Plug 'chriskempson/base16-vim'
+Plug 'mattn/emmet-vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'w0rp/ale'
 
 call plug#end()
 
-"colorscheme molokai
+" colorscheme molokai
 "Sourcing .vimrc_background where base16 clorscheme is set by the base16
 "shell script
+
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
     source ~/.vimrc_background
 endif
 
-"Fzf configuration
-set rtp+=~/.fzf
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
-
 "Basic config
 set relativenumber
+set number
 set tabstop=4
 set shiftwidth=4
 set textwidth=80
 set colorcolumn=+1
 highlight ColorColumn ctermbg=DarkRed
+"Make the background transparent
+hi Normal guibg=NONE ctermbg=NONE
 
 "KeyMapings
 noremap <Left> <NOP>
