@@ -1,18 +1,22 @@
-import os , shutil , re
+import os , shutil
 
-def detect_file_extensions(path):
-    '''
-    path(string): path if the directory we wanna get the file extension from. 
+def move_file( file_name ):
+    ext = os.path.splitext(file_name)[1]
+    if os.path.isdir(ext):
+        shutil.move(file_name, ext)
+    else:
+        os.mkdir(ext)
+        shutil.move(file_name, ext)
 
-    Returns: The file extension on path.
-    '''
+def organize_files(path):
     try:
         os.chdir(path)
     except:
-        print("Tu eres tonto")
-    ext = os.listdir(path)
-    print(ext)
+        print("Path not valid")
+    files = os.listdir(path)
+    for f in files:
+        if not os.path.isdir(f):
+            move_file(f)
 
 if __name__=="__main__":
-    detect_file_extensions("/home/diego/Downloads")
-
+    organize_files("/home/diego/Downloads/")
