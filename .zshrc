@@ -3,8 +3,10 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/diego/.oh-my-zsh"
+export JAVA_HOME="/usr/jdk/jdk1.8.0_191"
 
 PATH=$HOME/mydotfiles/tmux-spotify-info:$PATH
+PATH="$JAVA_HOME/bin:$PATH"
 
 ZSH_THEME="robbyrussell"
 # Base16 Shell
@@ -21,23 +23,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 fortune | cowsay -f tux
 
