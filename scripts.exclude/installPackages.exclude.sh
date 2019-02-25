@@ -2,6 +2,7 @@
 
 sudo add-apt-repository ppa:gnome-terminator
 sudo apt-get update
+mkdir ~/programs
 #Install the list of packages above with apt-get
 sudo apt-get install terminator
 sudo apt-get install git-core
@@ -42,3 +43,5 @@ sudo apt-get install spotify-client
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java8-installer
+#Install ranger
+git clone https://github.com/ranger/ranger ~/programs
