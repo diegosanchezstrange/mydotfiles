@@ -27,6 +27,8 @@ source $ZSH/oh-my-zsh.sh
 fortune | cowsay -f tux
 
 #Alias
+alias or="python3 ~/mydotfiles/scripts.exclude/fileOrganizer/downloadsOrganizer.exclude.py"
+alias eclipse="~/programs/eclipse/eclipse/eclipse"
 alias jsc="node"
 alias py="python3"
 alias ctux="clear ; fortune | cowsay -f tux"
